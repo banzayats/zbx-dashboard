@@ -1,0 +1,7 @@
+include LICENSE
+include README.rst
+
+recursive-include zbx_dashboard/locale *
+recursive-include zbx_dashboard/static *
+recursive-include zbx_dashboard/templates *
+recursive-include zbx_dashboard/templatetags *

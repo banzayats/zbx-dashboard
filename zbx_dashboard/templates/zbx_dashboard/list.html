@@ -1,0 +1,10 @@
+{% extends 'zbx_dashboard/base.html' %}
+{% load i18n %}
+{% block content %}
+    {% for board in object_list %}
+        <h2><a href="{{ board.get_absolute_url }}">{{ board.title }}</a></h2>
+        <p>{{ board.description }}</p>
+    {% empty %}
+    <p>{% trans "No dashboards" %}</p>
+    {% endfor %}
+{% endblock %}

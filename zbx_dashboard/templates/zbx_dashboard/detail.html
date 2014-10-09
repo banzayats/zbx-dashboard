@@ -1,0 +1,78 @@
+{% extends 'zbx_dashboard/base.html' %}
+{% load i18n %}
+{% load pass_period %}
+{% block extrahead %}
+<meta http-equiv="refresh" content="30" >
+{% endblock %}
+{% block jquery %}
+    // Restore widget order
+    function restoreOrder() {
+        var cookie = $.cookie('cookie_zbx');
+        if (!cookie) return;
+        var SavedID = cookie.split('|');
+        for ( var u=0, ul=SavedID.length; u < ul; u++ ){
+            SavedID[u] = SavedID[u].split(',');
+        }
+        for (var Scolumn=0, n = SavedID.length; Scolumn < n; Scolumn++) {
+            for (var Sitem=0, m = SavedID[Scolumn].length; Sitem < m; Sitem++) {
+                $("#sortable").eq(Scolumn).append($("#sortable").children("#" + SavedID[Scolumn][Sitem]));
+            }
+        }
+    }
+    restoreOrder();
+
+    // Allow widget reorder
+    $("#sortable").addClass("ui-helper-clearfix");
+    $("#sortable").sortable({
+        connectWith: ".row",
+        opacity: 0.3,
+        cursor: "move",
+        update: function(event, ui) {
+            var cooked = [];
+            $( "#sortable" ).each(function(index, domEle){
+                cooked[index]= $(domEle).sortable('toArray');
+            });
+            $.cookie('cookie_zbx', 'x'+cooked.join('|'), { expires: 31, path: '/'});
+        }
+    });
+    $("#sortable").disableSelection();
+
+    // Set equal height of elements
+    function setEqualHeight(columns){
+        var tallestcolumn = 0;
+        columns.each(
+            function(){
+                currentHeight = $(this).height();
+                if(currentHeight > tallestcolumn){
+                    tallestcolumn = currentHeight;
+                }
+            }
+        );
+        columns.height(tallestcolumn);
+    }
+    setEqualHeight($(".row > div"));
+{% endblock %}
+{% block content %}
+    <div class="page-header">
+        <h2>{{ board.title }}</h2>
+        <p>{{ board.description }}</p>
+    </div>
+    {% if board.graph_set.all %}
+    <form method="get" action="." role="form" class="form-inline">
+        <label class="col-sm-1 control-label">{% trans "Zoom" %}</label>
+        <div class="form-group">
+        {{ form.select }}
+        </div>
+    </form>
+    {% endif %}
+    <div class="row" id="sortable">
+    {% for graph in board.graph_set.all %}
+    <div class="col-md-6" id="{{ graph.graph_id }}">
+        <h3>{{ graph.title }}</h3>
+        <img src="{{ graph|get_img_period:period  }}" alt="{{ graph.title }}" />
+        <p>{{ graph.description|safe }}</p>
+    </div>
+    {% empty %}
+    <p>{% trans "No elements" %}</p>
+    {% endfor %}
+{% endblock %}

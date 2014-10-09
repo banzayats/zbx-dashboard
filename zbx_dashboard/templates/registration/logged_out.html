@@ -1,0 +1,5 @@
+{% extends 'zbx_dashboard/base.html' %}
+{% load i18n %}
+{% block content %}
+<p class="bg-warning">You are logged out. If you want to login again follow the <a href="{% url 'login' %}?next={% url 'boards:list' %}">link</a>.</p>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'zbx_dashboard/base.html' %}
+{% load i18n %}
+{% block content %}
+<div class="jumbotron">
+    <h2>{% trans "Page Not Found (Error 404)" %}</h2>
+    <p>{% trans "The page you requested could not be found. Use your browsers Back button to navigate to the page you have previously come from." %}</p>
+    <p>{% trans "Or you could just press this neat little button" %}:</p>
+    <a href="/" class="btn btn-large btn-info"><span class="glyphicon glyphicon-home"></span> {% trans "Back to home" %}</a>
+</div>
+{% endblock %}
