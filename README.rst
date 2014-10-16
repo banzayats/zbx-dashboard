@@ -110,3 +110,7 @@ This creates a few tables in your database that are necessary for operation.
 
     $ python manage.py runserver 0.0.0.0:5000
 
+Demo
+===============================================
+Demo site: http://boyard.pp.ua:8000
+login: admin, password: admin 
