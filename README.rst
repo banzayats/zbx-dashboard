@@ -112,5 +112,6 @@ This creates a few tables in your database that are necessary for operation.
 
 Demo
 ===============================================
-Demo site: http://boyard.pp.ua:8000
+Demo site: http://boyard.pp.ua
+
 login: admin, password: admin 
