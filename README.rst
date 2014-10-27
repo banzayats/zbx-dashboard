@@ -1,3 +1,13 @@
+.. image:: https://pypip.in/download/zbx-dashboard/badge.svg
+    :target: https://pypi.python.org/pypi/zbx-dashboard/
+    :alt: Downloads
+.. image:: https://pypip.in/version/zbx-dashboard/badge.svg
+    :target: https://pypi.python.org/pypi/zbx-dashboard/
+    :alt: Latest Version
+.. image:: https://travis-ci.org/banzayats/zbx-dashboard.svg?branch=master
+    :target: https://travis-ci.org/banzayats/zbx-dashboard
+    :alt: Travis CI
+
 ===============================================
 zbx_dashboard
 ===============================================
