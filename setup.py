@@ -7,17 +7,17 @@ README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='zbx-dashboard',
-    version='0.1.0',
-    packages=['zbx_dashboard'],
-    include_package_data=True,
-    license='MIT',
-    description='Simple Django applicattion that provides an alternative to the Zabbix screens.',
-    long_description=README,
-    author='Vadym Kalsin',
+    name = 'zbx-dashboard',
+    version = '0.1.1',
+    packages = ['zbx_dashboard'],
+    include_package_data = True,
+    license = 'MIT',
+    description = 'Simple Django applicattion that provides an alternative to the Zabbix screens.',
+    long_description = README,
+    author = 'Vadym Kalsin',
     url = 'https://github.com/banzayats/zbx-dashboard/',
-    author_email='neformat@gmail.com',
-    classifiers=[
+    author_email = 'neformat@gmail.com',
+    classifiers = [
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
@@ -37,5 +37,5 @@ setup(
         'pycurl>=7.19.0',
         'django-tinymce>=1.5',
         'django-admin-tools',
-    ]
+    ],
 )
