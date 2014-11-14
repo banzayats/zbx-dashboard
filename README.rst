@@ -50,6 +50,7 @@ Or latest stable version from GitHub:
         'admin_tools.menu',
         'admin_tools.dashboard',
         'tinymce',
+        'widget_tweaks',
         'django.contrib.admin',
         'django.contrib.auth',
         'django.contrib.contenttypes',
