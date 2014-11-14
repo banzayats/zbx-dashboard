@@ -2,11 +2,12 @@
 # pylint: disable=unexpected-keyword-arg, no-value-for-parameter
 
 from django import forms
+from django.forms.models import inlineformset_factory
+from zbx_dashboard.models import Board, Graph
 from django.utils.translation import ugettext as _
 
+
 # Form to select the time interval
-
-
 class SelectForm(forms.Form):
     CHOICES = (
         ('86400', _("1 day")),
@@ -33,3 +34,24 @@ class SelectForm(forms.Form):
         choices=CHOICES,
         label=_("Zoom"),
     )
+
+
+class BoardForm(forms.ModelForm):
+    class Meta:
+        model = Board
+        widgets = {
+            'description': forms.Textarea(attrs={'rows': 3}),
+            'groups': forms.CheckboxSelectMultiple(),
+        }
+        exclude = []
+
+
+class GraphForm(forms.ModelForm):
+    class Meta:
+        model = Graph
+        widgets = {
+            'description': forms.Textarea(attrs={'rows': 4}),
+        }
+        exclude = []
+
+GraphFormSet = inlineformset_factory(Board, Graph, form=GraphForm, extra=1)

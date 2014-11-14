@@ -36,6 +36,9 @@ class Board(models.Model):
     def get_absolute_url(self):
         return "/boards/%i/" % self.id
 
+    def get_update_url(self):
+        return "/boards/update/%i/" % self.id
+
     def get_groups(self):
         return ", ".join([p.name for p in self.groups.all()])
     get_groups.short_description = _('Linked groups')

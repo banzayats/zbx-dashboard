@@ -1,10 +1,40 @@
 {% extends 'zbx_dashboard/base.html' %}
 {% load i18n %}
+{% block extrahead %}
+    <style>
+        .offset-top { 
+            margin-top: 20px;
+        }
+    </style>
+{% endblock %}
+{% block jquery %}
+    // Set equal height of elements
+    function setEqualHeight(columns){
+        var tallestcolumn = 0;
+        columns.each(
+            function(){
+                currentHeight = $(this).height();
+                if(currentHeight > tallestcolumn){
+                    tallestcolumn = currentHeight;
+                }
+            }
+        );
+        columns.height(tallestcolumn);
+    }
+    setEqualHeight($(".row > div"));
+{% endblock %}
 {% block content %}
+    <div class="row">
     {% for board in object_list %}
-        <h2><a href="{{ board.get_absolute_url }}">{{ board.title }}</a></h2>
-        <p>{{ board.description }}</p>
+        <div class="col-lg-4 col-lg-offset-1 bg-info offset-top img-rounded">
+            <h2><a href="{{ board.get_absolute_url }}">{{ board.title }}</a></h2>
+            {% if user.is_authenticated and user.is_staff %}
+            <a class="btn btn-xs btn-primary pull-right" href="{{ board.get_update_url }}">{% trans "Edit" %}</a>
+            {% endif %}
+            <p>{{ board.description }}</p>
+        </div>
     {% empty %}
     <p>{% trans "No dashboards" %}</p>
     {% endfor %}
+    </div>
 {% endblock %}

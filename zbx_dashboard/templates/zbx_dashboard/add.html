@@ -1,0 +1,91 @@
+{% extends 'zbx_dashboard/base.html' %}
+{% load i18n %}
+{% load pass_period %}
+{% load widget_tweaks %}
+{% block extrahead %}
+    <style>
+        .btn-sm { margin: 20px;}
+        .btn-success { margin-top: 20px;}
+        .btn-warning { margin-top: 20px;}
+    </style>
+{% endblock %}
+{% block jquery %}
+    $(".inline.{{ graph_form.prefix }}").formset({
+        prefix: "{{ graph_form.prefix }}",
+    })
+{% endblock %}
+{% block content %}
+    <div class="page-header">
+        <h2>{% trans "Add dashboard" %}</h2>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <form action="." method="post" class="container-fluid">
+                {% csrf_token %}
+                <div class="form-group">
+                    {% if form.title.errors %}
+                        <p class="bg-danger">{{ form.title.errors.as_text }}</p>
+                    {% endif %}
+                    {{ form.title.label_tag }}
+                    {{ form.title|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                    {% if form.description.errors %}
+                        <p class="bg-danger">{{ form.description.errors.as_text }}</p>
+                    {% endif %}
+                    {{ form.description.label_tag }}
+                    {{ form.description|add_class:"form-control" }}
+                </div>
+                <div class="form-group">
+                    {% if form.groups.errors %}
+                        <p class="bg-danger">{{ form.groups.errors.as_text }}</p>
+                    {% endif %}
+                    {{ form.groups.errors }}
+                    {{ form.groups.label_tag }}
+                    <span class="btn-group" data-toggle="buttons">
+                        {% for checkbox in form.groups %}
+                            <label class="btn btn-info">
+                            {{ checkbox.tag }} {{ checkbox.choice_label }}
+                            </label>
+                        {% endfor %}
+                    </span>
+                </div>
+                <fieldset>
+                    <legend>Graphs</legend>
+                        {{ graph_form.management_form }}
+                        {{ graph_form.non_form_errors }}
+                        <div class="row">
+                        {% for form in graph_form %}
+                            {{ form.id }}
+                            <div class="col-lg-3 col-md-4 inline {{ graph_form.prefix }}">
+                                <div class="form-group">
+                                    {% if form.title.errors %}
+                                        <p class="bg-danger">{{ form.title.errors.as_text }}</p>
+                                    {% endif %}
+                                    {{ form.title.label_tag }}
+                                    {{ form.title|add_class:"form-control" }}
+                                </div>
+                                <div class="form-group">
+                                    {% if form.graph_id.errors %}
+                                        <p class="bg-danger">{{ form.graph_id.errors.as_text }}</p>
+                                    {% endif %}
+                                    {{ form.graph_id.label_tag }}
+                                    {{ form.graph_id|add_class:"form-control" }}
+                                </div>
+                                <div class="form-group">
+                                    {% if form.description.errors %}
+                                        <p class="bg-danger">{{ form.description.errors.as_text }}</p>
+                                    {% endif %}
+                                    {{ form.description.label_tag }}
+                                    {{ form.description|add_class:"form-control" }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                        </div>
+                </fieldset>
+                <button type="submit" class="btn btn-success">{% trans "Add dashboard" %}</button>
+                <a class="btn btn-warning" href="javascript:history.back()">{% trans "Cancel" %}</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

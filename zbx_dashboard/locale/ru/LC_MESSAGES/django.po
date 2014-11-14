@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.1.0\n"
+"Project-Id-Version: 0.1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-08 13:42+0300\n"
+"POT-Creation-Date: 2014-11-13 16:20+0200\n"
 "PO-Revision-Date: 2014-10-08 16:00+0300\n"
 "Last-Translator: Vadym Kalsin <neformat@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -16,162 +16,208 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: admin.py:11 models.py:101
+#: zbx_dashboard/admin.py:11 zbx_dashboard/models.py:104
 msgid "Graphs"
 msgstr "Графики"
 
-#: admin.py:21
+#: zbx_dashboard/admin.py:21
 msgid "Dashboard options"
 msgstr "Дополнительные опции"
 
-#: forms.py:12
+#: zbx_dashboard/forms.py:13
 msgid "1 day"
 msgstr "1 день"
 
-#: forms.py:13
+#: zbx_dashboard/forms.py:14
 msgid "1 hour"
 msgstr "1 час"
 
-#: forms.py:14
+#: zbx_dashboard/forms.py:15
 msgid "2 hours"
 msgstr "2 часа"
 
-#: forms.py:15
+#: zbx_dashboard/forms.py:16
 msgid "3 hours"
 msgstr "3 часа"
 
-#: forms.py:16
+#: zbx_dashboard/forms.py:17
 msgid "6 hours"
 msgstr "6 часов"
 
-#: forms.py:17
+#: zbx_dashboard/forms.py:18
 msgid "12 hours"
 msgstr "12 часов"
 
-#: forms.py:18
+#: zbx_dashboard/forms.py:19
 msgid "1 week"
 msgstr "1 неделя"
 
-#: forms.py:19
+#: zbx_dashboard/forms.py:20
 msgid "2 weeks"
 msgstr "2 недели"
 
-#: forms.py:20
+#: zbx_dashboard/forms.py:21
 msgid "1 month"
 msgstr "1 месяц"
 
-#: forms.py:21
+#: zbx_dashboard/forms.py:22
 msgid "3 months"
 msgstr "3 месяца"
 
-#: forms.py:22
+#: zbx_dashboard/forms.py:23
 msgid "6 months"
 msgstr "6 месяцев"
 
-#: forms.py:23
+#: zbx_dashboard/forms.py:24
 msgid "Year"
 msgstr "Год"
 
-#: forms.py:34 templates/zbx_dashboard/detail.html:62
+#: zbx_dashboard/forms.py:35
+#: zbx_dashboard/templates/zbx_dashboard/detail.html:62
 msgid "Zoom"
 msgstr "Масштаб"
 
-#: models.py:18 models.py:51
+#: zbx_dashboard/models.py:18 zbx_dashboard/models.py:54
 msgid "Title"
 msgstr "Заголовок"
 
-#: models.py:22
+#: zbx_dashboard/models.py:22
 msgid "Short description"
 msgstr "Краткое описание"
 
-#: models.py:30 models.py:41
+#: zbx_dashboard/models.py:30 zbx_dashboard/models.py:44
 msgid "Linked groups"
 msgstr "Связанные группы"
 
-#: models.py:44
+#: zbx_dashboard/models.py:47
 msgid "Board"
 msgstr "Панель"
 
-#: models.py:45
+#: zbx_dashboard/models.py:48
 msgid "Boards"
-msgstr "Панели"
+msgstr "Дешборды"
 
-#: models.py:55
+#: zbx_dashboard/models.py:58
 msgid "Graph ID"
 msgstr "ID графика"
 
-#: models.py:59
+#: zbx_dashboard/models.py:62
 msgid "Graph description"
 msgstr "Описание графика"
 
-#: models.py:100
+#: zbx_dashboard/models.py:103
 msgid "Graph"
 msgstr "График"
 
-#: templates/404.html:5
+#: zbx_dashboard/templates/404.html:5
 msgid "Page Not Found (Error 404)"
 msgstr "Страница не найдена (Ошибка 404)"
 
-#: templates/404.html:6
+#: zbx_dashboard/templates/404.html:6
 msgid ""
 "The page you requested could not be found. Use your browsers Back button to "
 "navigate to the page you have previously come from."
-msgstr "Запрашиваемая вами страница не найдена. Используйте кнопку Назад "
-"вашего браузера чтобы перейти на предыдущую страницу."
+msgstr ""
+"Запрашиваемая вами страница не найдена. Используйте кнопку Назад вашего "
+"браузера чтобы перейти на предыдущую страницу."
 
-#: templates/404.html:7
+#: zbx_dashboard/templates/404.html:7
 msgid "Or you could just press this neat little button"
 msgstr "Или вы можете просто нажать на эту аккуратную кнопку"
 
-#: templates/404.html:8
+#: zbx_dashboard/templates/404.html:8
 msgid "Back to home"
 msgstr "Вернуться на главную"
 
-#: templates/registration/login.html:6
+#: zbx_dashboard/templates/registration/login.html:6
 msgid "You have entered the wrong username or password."
 msgstr "Вы неправильно ввели логин или пароль"
 
-#: templates/registration/login.html:12 templates/zbx_dashboard/base.html:64
+#: zbx_dashboard/templates/registration/login.html:12
+#: zbx_dashboard/templates/zbx_dashboard/base.html:81
 msgid "Username"
 msgstr "Имя пользователя"
 
-#: templates/registration/login.html:13
+#: zbx_dashboard/templates/registration/login.html:13
+#: zbx_dashboard/templates/zbx_dashboard/base.html:82
 msgid "Enter your username"
 msgstr "Введите имя пользователя"
 
-#: templates/registration/login.html:16 templates/zbx_dashboard/base.html:68
+#: zbx_dashboard/templates/registration/login.html:16
+#: zbx_dashboard/templates/zbx_dashboard/base.html:85
 msgid "Password"
 msgstr "Пароль"
 
-#: templates/registration/login.html:17
+#: zbx_dashboard/templates/registration/login.html:17
+#: zbx_dashboard/templates/zbx_dashboard/base.html:86
 msgid "Enter your password"
 msgstr "Введите ваш пароль"
 
-#: templates/registration/login.html:19 templates/zbx_dashboard/base.html:58
-#: templates/zbx_dashboard/base.html:71
+#: zbx_dashboard/templates/registration/login.html:19
+#: zbx_dashboard/templates/zbx_dashboard/base.html:75
+#: zbx_dashboard/templates/zbx_dashboard/base.html:88
 msgid "Login"
 msgstr "Вход"
 
-#: templates/zbx_dashboard/base.html:9 templates/zbx_dashboard/base.html:44
+#: zbx_dashboard/templates/zbx_dashboard/add.html:19
+#: zbx_dashboard/templates/zbx_dashboard/add.html:86
+#: zbx_dashboard/templates/zbx_dashboard/base.html:53
+msgid "Add dashboard"
+msgstr "Добавить дешборд"
+
+#: zbx_dashboard/templates/zbx_dashboard/add.html:87
+#: zbx_dashboard/templates/zbx_dashboard/update.html:87
+msgid "Cancel"
+msgstr "Отмена"
+
+#: zbx_dashboard/templates/zbx_dashboard/base.html:9
+#: zbx_dashboard/templates/zbx_dashboard/base.html:45
 msgid "Dashboard"
 msgstr "Панель управления"
 
-#: templates/zbx_dashboard/base.html:49 templates/zbx_dashboard/base.html:53
+#: zbx_dashboard/templates/zbx_dashboard/base.html:50
+#: zbx_dashboard/templates/zbx_dashboard/base.html:70
 msgid "List of dashboards"
-msgstr "Список панелей"
+msgstr "Список дешбордов"
 
-#: templates/zbx_dashboard/base.html:50
+#: zbx_dashboard/templates/zbx_dashboard/base.html:58
+msgid "Zabbix screen ID"
+msgstr "ID комплексного экрана"
+
+#: zbx_dashboard/templates/zbx_dashboard/base.html:59
+msgid "Enter screen ID"
+msgstr "Введите ID"
+
+#: zbx_dashboard/templates/zbx_dashboard/base.html:61
+msgid "Import"
+msgstr "Импортировать"
+
+#: zbx_dashboard/templates/zbx_dashboard/base.html:63
+msgid "Create blank"
+msgstr "Создать новый"
+
+#: zbx_dashboard/templates/zbx_dashboard/base.html:67
 msgid "Administration"
 msgstr "Администрирование"
 
-#: templates/zbx_dashboard/base.html:51 templates/zbx_dashboard/base.html:54
+#: zbx_dashboard/templates/zbx_dashboard/base.html:68
+#: zbx_dashboard/templates/zbx_dashboard/base.html:71
 msgid "Exit"
 msgstr "Выход"
 
-#: templates/zbx_dashboard/detail.html:76
+#: zbx_dashboard/templates/zbx_dashboard/detail.html:77
 msgid "No elements"
 msgstr "Нет элементов"
 
-#: templates/zbx_dashboard/list.html:8
+#: zbx_dashboard/templates/zbx_dashboard/list.html:32
+msgid "Edit"
+msgstr "Редактировать"
+
+#: zbx_dashboard/templates/zbx_dashboard/list.html:37
 msgid "No dashboards"
-msgstr "Панели отсутствуют"
+msgstr "Дешборды отсутствуют"
+
+#: zbx_dashboard/templates/zbx_dashboard/update.html:19
+#: zbx_dashboard/templates/zbx_dashboard/update.html:86
+msgid "Update dashboard"
+msgstr "Редактировать дешборд"
