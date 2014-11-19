@@ -94,6 +94,7 @@ Or latest stable version from GitHub:
 
     urlpatterns = patterns('',
         # ...
+        url(r'^$', include('zbx_dashboard.urls')),
         url(r'^admin_tools/', include('admin_tools.urls')),
         url(r'^boards/', include('zbx_dashboard.urls', namespace="boards")),
         url(r'^accounts/login/$',  login, name='login'),
