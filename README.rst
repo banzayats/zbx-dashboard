@@ -69,8 +69,7 @@ Or latest stable version from GitHub:
         'django.core.context_processors.request',
         'django.core.context_processors.static',
         'django.contrib.messages.context_processors.messages',
-)
-
+    )
 
     LOGIN_REDIRECT_URL = '/boards'
 
