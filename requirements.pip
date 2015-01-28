@@ -1,0 +1,13 @@
+pylint
+coverage
+pyflakes
+pep8
+MySQL-python
+django-admin-tools
+django-jenkins
+django-debug-toolbar
+pycurl==7.19.0
+django-tinymce
+django-widget-tweaks
+django-nose
+pyzabbix
