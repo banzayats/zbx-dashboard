@@ -115,6 +115,11 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 # django-nose
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
+NOSE_ARGS = [
+  '--with-xunit', '--xunit-file=shippable/testresults/test.xml',
+  '--with-coverage', '--cover-xml', '--cover-xml-file=shippable/codecoverage/coverage.xml',
+]
+
 # Django Debug Toolbar
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
 INTERNAL_IPS = ('127.0.0.1',)
