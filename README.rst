@@ -7,6 +7,9 @@
 .. image:: https://travis-ci.org/banzayats/zbx-dashboard.svg?branch=master
     :target: https://travis-ci.org/banzayats/zbx-dashboard
     :alt: Travis CI
+.. image:: https://api.shippable.com/projects/54c7ae0d5ab6cc135289ecbc/badge?branchName=master
+    :target: https://api.shippable.com/projects/54c7ae0d5ab6cc135289ecbc/
+    :alt: Shippable
 
 ===============================================
 zbx_dashboard
