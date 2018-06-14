@@ -1,3 +1,10 @@
+**This project is not maintained anymore**
+
+Please consider using:
+
+- Zabbix dashboards - https://www.zabbix.com/documentation/3.4/manual/web_interface/frontend_sections/monitoring/dashboard
+- Zabbix plugin for Grafana dashboard - https://github.com/alexanderzobnin/grafana-zabbix
+
 .. image:: https://pypip.in/download/zbx-dashboard/badge.svg
     :target: https://pypi.python.org/pypi/zbx-dashboard/
     :alt: Downloads
@@ -10,6 +17,7 @@
 .. image:: https://api.shippable.com/projects/54c7ae0d5ab6cc135289ecbc/badge?branchName=master
     :target: https://api.shippable.com/projects/54c7ae0d5ab6cc135289ecbc/
     :alt: Shippable
+
 
 ===============================================
 zbx_dashboard
